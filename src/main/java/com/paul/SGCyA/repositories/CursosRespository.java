@@ -1,7 +1,10 @@
 package com.paul.SGCyA.repositories;
 
 import com.paul.SGCyA.models.Curso;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface CursosRespository extends CrudRepository<Curso, Long> {
+@Repository
+public interface CursosRespository extends JpaRepository<Curso, Long> {
+
 }
