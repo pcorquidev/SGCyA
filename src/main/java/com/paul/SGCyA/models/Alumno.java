@@ -4,10 +4,11 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
+import java.util.Set;
 
 @Data
 @Table(name = "ALUMNOS")
-@Entity
+@Entity(name = "ALUMNO")
 public class Alumno {
 
     @Id
@@ -23,6 +24,6 @@ public class Alumno {
     private Date fechaCreacion;
     @Column(name = "fecha_modificacion")
     private Date fechaModificacion;
-    @ManyToMany
-    private Curso curso;
+    @ManyToMany(mappedBy = "alumno")
+    private Set<Curso> curso;
 }
