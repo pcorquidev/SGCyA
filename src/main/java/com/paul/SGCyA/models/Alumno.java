@@ -3,6 +3,7 @@ package com.paul.SGCyA.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Set;
 
@@ -16,14 +17,14 @@ public class Alumno {
     private Long Id;
     @Column
     private String matricula;
-    @Column
-    private String name;
+    @Column(name = "first_name")
+    private String first_name;
     @Column(name = "last_name")
     private String lastName;
     @Column(name = "fecha_creacion")
-    private Date fechaCreacion;
+    private LocalDate fechaCreacion;
     @Column(name = "fecha_modificacion")
-    private Date fechaModificacion;
+    private LocalDate fechaModificacion;
     @ManyToMany(mappedBy = "alumno")
     private Set<Curso> curso;
 }
