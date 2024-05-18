@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AlumnosRepository extends JpaRepository<Alumno,Long> {
+    Alumno findByMatricula(String matricula);
 }
