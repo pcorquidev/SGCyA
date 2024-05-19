@@ -1,10 +1,12 @@
 package com.paul.SGCyA.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -25,6 +27,8 @@ public class Alumno {
     private LocalDate fechaCreacion;
     @Column(name = "fecha_modificacion")
     private LocalDate fechaModificacion;
-    @ManyToMany(mappedBy = "alumno")
-    private Set<Curso> curso;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "alumnos")
+    private List<Enrolado> enrolados;
 }

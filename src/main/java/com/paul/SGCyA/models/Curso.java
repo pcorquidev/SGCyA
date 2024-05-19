@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.Set;
+import java.util.List;
 
 @Data
 @Table(name = "CURSOS")
@@ -20,6 +20,7 @@ public class Curso {
     private LocalDate fechaCreacion;
     @Column(name = "fecha_modificacion")
     private LocalDate fechaModificacion;
-    @ManyToMany
-    private Set<Alumno> alumno;
+
+    @OneToMany(mappedBy = "cursos")
+    private List<Enrolado> enrolados;
 }
