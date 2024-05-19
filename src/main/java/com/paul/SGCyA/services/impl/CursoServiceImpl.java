@@ -34,8 +34,9 @@ public class CursoServiceImpl implements CursoService {
                      alumnoDTO.setNombreCompleto(enrolado.getAlumnos().getFirst_name() + " " +enrolado.getAlumnos().getLastName());
                      alumnoDTO.setMatricula(enrolado.getAlumnos().getMatricula());
 
+
                      if(enrolado.getCalificacion() != null || enrolado.getAsistencia() != null){
-                         if(enrolado.getCalificacion() >= 7.0 || enrolado.getAsistencia() >= 80){
+                         if(enrolado.getCalificacion() >= 7.0 || enrolado.getAsistencia() >= 80 || enrolado.getCalificacion() + enrolado.getCalificacion()>=150.0){
                              alumnoDTO.setAprobado("APROVADO");
                          }else {
                              alumnoDTO.setAprobado("NO APROVADO");
